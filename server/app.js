@@ -20,8 +20,8 @@ import issueRoutes from "./routes/issue.routes.js";
 import pullRequestRoutes from "./routes/pullRequest.routes.js";
 import organizationRoutes from "./routes/organization.routes.js";
 import notificationRoutes from "./routes/notification.routes.js";
-// import searchRoutes from "./routes/search.routes.js";
-// import aiRoutes from "./routes/ai.routes.js";
+import searchRoutes from "./routes/search.routes.js";
+import aiRoutes from "./routes/ai.routes.js";
 
 const app = express();
 
@@ -101,8 +101,8 @@ app.use("/api/v1/issues", issueRoutes);
 app.use("/api/v1/pull-requests", pullRequestRoutes);
 app.use("/api/v1/organizations", organizationRoutes);
 app.use("/api/v1/notifications", notificationRoutes);
-// app.use("/api/v1/search", searchRoutes);
-// app.use("/api/v1/ai", aiRoutes);
+app.use("/api/v1/search", searchRoutes);
+app.use("/api/v1/ai", aiRoutes);
 
 app.use(notFoundMiddleware);
 app.use(errorMiddleware);

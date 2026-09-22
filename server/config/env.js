@@ -14,6 +14,8 @@ const REQUIRED_ENV_VARS = [
   "CLIENT_URL",
 ];
 
+const OPTIONAL_ENV_VARS = ["ANTHROPIC_API_KEY"];
+
 const validateEnv = () => {
   const missing = REQUIRED_ENV_VARS.filter((key) => !process.env[key]);
 
@@ -38,6 +40,7 @@ const env = {
   jwtSecret: process.env.JWT_SECRET,
   jwtExpiresIn: process.env.JWT_EXPIRES_IN || "7d",
   clientUrl: process.env.CLIENT_URL,
+  anthropicApiKey: process.env.ANTHROPIC_API_KEY || null,
   cloudinary: {
     cloudName: process.env.CLOUDINARY_CLOUD_NAME,
     apiKey: process.env.CLOUDINARY_API_KEY,

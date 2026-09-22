@@ -1,0 +1,275 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-surface-primary: #0d1117;
+  --color-surface-secondary: #161b22;
+  --color-surface-tertiary: #21262d;
+  --color-surface-overlay: #30363d;
+
+  --color-border-default: #30363d;
+  --color-border-muted: #21262d;
+  --color-border-emphasis: #6e7681;
+
+  --color-text-primary: #e6edf3;
+  --color-text-secondary: #8b949e;
+  --color-text-muted: #6e7681;
+  --color-text-link: #58a6ff;
+  --color-text-danger: #f85149;
+  --color-text-success: #3fb950;
+  --color-text-warning: #d29922;
+
+  --color-accent-blue: #58a6ff;
+  --color-accent-green: #3fb950;
+  --color-accent-red: #f85149;
+  --color-accent-yellow: #d29922;
+  --color-accent-orange: #db6d28;
+  --color-accent-purple: #bc8cff;
+  --color-accent-pink: #ff7b72;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: #0d1117;
+  color: #e6edf3;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Helvetica,
+    Arial,
+    sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d1117;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6e7681;
+}
+
+::selection {
+  background-color: rgba(88, 166, 255, 0.3);
+  color: #e6edf3;
+}
+
+a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+code,
+pre,
+kbd,
+samp {
+  font-family:
+    "JetBrains Mono",
+    "Fira Code",
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    monospace;
+}
+
+pre {
+  overflow-x: auto;
+  white-space: pre;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+input,
+textarea,
+select {
+  outline: none;
+}
+
+.skeleton {
+  background: linear-gradient(90deg,
+      #21262d 25%,
+      #30363d 50%,
+      #21262d 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.15s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-slide-down {
+  animation: slideDown 0.15s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.prose-hubkode {
+  color: #e6edf3;
+  max-width: none;
+}
+
+.prose-hubkode h1,
+.prose-hubkode h2,
+.prose-hubkode h3,
+.prose-hubkode h4,
+.prose-hubkode h5,
+.prose-hubkode h6 {
+  color: #e6edf3;
+  border-bottom: 1px solid #30363d;
+  padding-bottom: 0.3em;
+  margin-bottom: 1em;
+}
+
+.prose-hubkode a {
+  color: #58a6ff;
+}
+
+.prose-hubkode code {
+  color: #ff7b72;
+  background-color: rgba(110, 118, 129, 0.4);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.875em;
+}
+
+.prose-hubkode pre {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 1em;
+}
+
+.prose-hubkode pre code {
+  background: none;
+  padding: 0;
+  color: #e6edf3;
+  font-size: 0.875em;
+}
+
+.prose-hubkode blockquote {
+  border-left: 4px solid #30363d;
+  color: #8b949e;
+  padding-left: 1em;
+  margin-left: 0;
+}
+
+.prose-hubkode table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.prose-hubkode th,
+.prose-hubkode td {
+  border: 1px solid #30363d;
+  padding: 0.5em 1em;
+  text-align: left;
+}
+
+.prose-hubkode th {
+  background-color: #161b22;
+  font-weight: 600;
+}
+
+.prose-hubkode tr:nth-child(even) {
+  background-color: rgba(22, 27, 34, 0.5);
+}
+
+.prose-hubkode hr {
+  border-color: #30363d;
+  margin: 2em 0;
+}
+
+.prose-hubkode ul,
+.prose-hubkode ol {
+  padding-left: 2em;
+}
+
+.prose-hubkode li {
+  margin-bottom: 0.25em;
+}
+
+.prose-hubkode img {
+  border-radius: 6px;
+  max-width: 100%;
+}
